@@ -831,6 +831,11 @@
     @media (hover: hover) { .f-btn:hover, .sf-btn:hover { border-color: #B1904E; background: rgba(177,144,78,0.14); } }
     .f-btn:active, .sf-btn:active { background: #B1904E; color: #08383B; border-color: #B1904E; }
     .f-btn.active, .sf-btn.active { background: #B1904E; color: #08383B; border-color: #B1904E; box-shadow: 0 4px 14px rgba(0,0,0,0.25); }
+    /* Plantas: botões Plantas / Ambientes */
+    body.mode-plantas .f-btn { background: rgba(255,255,255,0.10); color: #083839; border-radius: 10px; }
+    body.mode-plantas .f-btn.active { background: rgba(255,255,255,0.30); color: #083839; box-shadow: none; }
+    @media (hover: hover) { body.mode-plantas .f-btn:hover { background: rgba(255,255,255,0.20); border-color: transparent; } }
+    body.mode-plantas .f-btn:active { background: rgba(255,255,255,0.30); color: #083839; }
 
     /* ── Fundo das prévias ── */
     .g-card { background: #B1904E; }
@@ -1039,11 +1044,18 @@ function getSubLabel(catId, subId) {
 // ── filters ──────────────────────────────────────────────────────
 function renderMainFilters() {
   elFilterMain.innerHTML = '';
-  DISPLAY_CATS.forEach(cat => {
+  const PL = MODE === 'plantas';
+  (PL ? getCat('plantas').subs : DISPLAY_CATS).forEach(cat => {
     const b = document.createElement('button');
-    b.className = 'f-btn' + (cat.id === st.cat ? ' active' : '');
+    b.className = 'f-btn' + ((PL ? cat.id === st.sub : cat.id === st.cat) ? ' active' : '');
     b.textContent = cat.label;
     b.addEventListener('click', () => {
+      if (PL) {
+        if (cat.id === st.sub) return;
+        st.sub = cat.id;
+        renderMainFilters(); renderGallery();
+        return;
+      }
       if (cat.id === st.cat) return;
       st.cat = cat.id;
       // Se a categoria tem sub-filtros, pré-seleciona o primeiro
@@ -1055,6 +1067,7 @@ function renderMainFilters() {
 }
 
 function renderSubFilters() {
+  if (MODE === 'plantas') { elFilterSub.classList.remove('open'); return; }
   const cat = getCat(st.cat);
   if (cat && cat.subs && cat.subs.length) {
     elFilterSubIn.innerHTML = '';
@@ -1398,6 +1411,7 @@ function closeGallery() {
 
 // ── init ──────────────────────────────────────────────────────────
 function init() {
+  document.body.classList.toggle('mode-plantas', MODE === 'plantas');
   // Filtro inicial depende do modo
   if (MODE === 'plantas') {
     st.cat = 'plantas';
