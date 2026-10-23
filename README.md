@@ -1,8 +1,8 @@
-# Modern Galeria — Tenório Legend
+# Modern Galeria — Lothus
 
 Galeria de imagens/plantas/vídeos para injeção via script no 3DVista, hospedada no AWS S3.
 
-**Projeto:** Tenório Legend
+**Projeto:** Lothus
 **Tema:** verde imersivo (`#002E1D` / `#EAFFF7`)
 
 ---
@@ -11,18 +11,18 @@ Galeria de imagens/plantas/vídeos para injeção via script no 3DVista, hospeda
 
 | Arquivo | URL |
 |---------|-----|
-| Galeria | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/tenorio/galeria-legend/index.html` |
-| Vídeos  | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/tenorio/galeria-legend/video-gallery.html` |
-| Script  | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/tenorio/galeria-legend/inject.js` |
+| Galeria | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/rj-engenharia/galeria-lothus/index.html` |
+| Vídeos  | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/rj-engenharia/galeria-lothus/video-gallery.html` |
+| Script  | `https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/rj-engenharia/galeria-lothus/inject.js` |
 
-**S3 path:** `s3://skylineip/Tour Virtual/tenorio/galeria-legend/`
+**S3 path:** `s3://skylineip/Tour Virtual/rj-engenharia/galeria-lothus/`
 
 ---
 
 ## Estrutura de arquivos
 
 ```
-galeria/  (Tenório Legend)
+galeria/  (Lothus)
 ├── index.html              ← galeria de imagens + plantas (auto-suficiente)
 ├── video-gallery.html      ← galeria de vídeos
 ├── diferenciais.html       ← ficha de diferenciais (scroll)
@@ -65,7 +65,7 @@ galeria/  (Tenório Legend)
 Plantas que são **níveis de um mesmo conjunto** podem ser agrupadas num único card com abas
 que alternam (e sobrepõem) as variantes. Quando há **exatamente 2 pisos**, aparece também
 o botão "Ver ambas" (comparação lado a lado); com mais pisos, só as abas. Nenhum item do
-projeto atual usa esse formato — todas as plantas do Legend são cards individuais —
+projeto atual usa esse formato — todas as plantas do Lothus são cards individuais —
 mas o suporte permanece no motor da galeria para uso futuro:
 
 ```js
@@ -106,7 +106,7 @@ ignora `thumbs/`, `videos/` e o PDF.
 ### Sync completo
 
 ```bash
-aws s3 sync . "s3://skylineip/Tour Virtual/tenorio/galeria-legend/" \
+aws s3 sync . "s3://skylineip/Tour Virtual/rj-engenharia/galeria-lothus/" \
   --exclude ".git/*" --exclude ".claude/*" --exclude "*.py" \
   --exclude "README.md" --exclude ".gitattributes" --exclude "*.md" \
   --exclude "deploy.ps1" --exclude "*.pdf" \
@@ -116,10 +116,10 @@ aws s3 sync . "s3://skylineip/Tour Virtual/tenorio/galeria-legend/" \
 ### Atualizar só index.html e inject.js
 
 ```bash
-aws s3 cp index.html "s3://skylineip/Tour Virtual/tenorio/galeria-legend/index.html" \
+aws s3 cp index.html "s3://skylineip/Tour Virtual/rj-engenharia/galeria-lothus/index.html" \
   --cache-control "no-cache,no-store,must-revalidate"
 
-aws s3 cp inject.js "s3://skylineip/Tour Virtual/tenorio/galeria-legend/inject.js" \
+aws s3 cp inject.js "s3://skylineip/Tour Virtual/rj-engenharia/galeria-lothus/inject.js" \
   --cache-control "no-cache,no-store,must-revalidate"
 ```
 
@@ -134,7 +134,7 @@ aws s3 cp inject.js "s3://skylineip/Tour Virtual/tenorio/galeria-legend/inject.j
 ```js
 (function(){
   var s = document.createElement('script');
-  s.src = 'https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/tenorio/galeria-legend/inject.js?v=' + Date.now();
+  s.src = 'https://skylineip.s3.sa-east-1.amazonaws.com/Tour+Virtual/rj-engenharia/galeria-lothus/inject.js?v=' + Date.now();
   document.head.appendChild(s);
 })();
 ```
@@ -161,7 +161,7 @@ GaleriaPlantas(0);
 
 ## Cores e tipografia
 
-Tema **verde imersivo** do Tenório Legend:
+Tema **verde imersivo** do Lothus:
 
 | Token CSS | Valor | Papel |
 |-----------|-------|-------|

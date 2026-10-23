@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galeria — Tenório Legend</title>
+  <title>Galeria — Lothus</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -11,7 +11,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Tenório Legend — tema marrom imersivo.
+      /* Lothus — tema marrom imersivo.
          --bg = fundo marrom (primária) · --dark = foreground claro (secundária) · --accent = secundária usada em destaque/estado ativo */
       --bg: #332419;             /* marrom principal — cor primária */
       --surface: #3F2F22;        /* superfície de card (marrom +luz) */
@@ -920,71 +920,57 @@
 // os campos src com os nomes exatos dos arquivos.
 // ================================================================
 const GALLERY_CONFIG = {
-  projectName: 'TENÓRIO — LEGEND',
+  projectName: 'LOTHUS',
   projectSub:  '',
 
   categories: [
     { id: 'fachada', label: 'Fachada' },
-    { id: 'areas-comuns', label: 'Áreas Comuns' },
-    { id: 'apto-3', label: 'Apartamento 3 Quartos' },
-    { id: 'apto-4', label: 'Apartamento 4 Quartos' },
+    { id: 'lazer', label: 'Lazer' },
     { id: 'plantas', label: 'Plantas' },
-    { id: 'mapa', label: 'Localização' },
   ],
 
   items: [
     // ═══ FACHADA ═══
-    { id:30, type:'image', category:'fachada', title:'Inserção', src:'assets/IMAGENS/30_TEN-INC_LEG_INSERCAO-CAM1_R05.jpg', thumb:'assets/thumbs/IMAGENS/30_TEN-INC_LEG_INSERCAO-CAM1_R05.jpg' },
-    { id:31, type:'image', category:'fachada', title:'Fachada — Cam 1', src:'assets/IMAGENS/31_TEN-INC_LEG_FACHADA-CAM1_R05.jpg', thumb:'assets/thumbs/IMAGENS/31_TEN-INC_LEG_FACHADA-CAM1_R05.jpg' },
-    { id:32, type:'image', category:'fachada', title:'Fachada — Cam 2', src:'assets/IMAGENS/32_TEN-INC_LEG_FACHADA-CAM2_R05.jpg', thumb:'assets/thumbs/IMAGENS/32_TEN-INC_LEG_FACHADA-CAM2_R05.jpg' },
-    { id:33, type:'image', category:'fachada', title:'Fachada — Cam 3', src:'assets/IMAGENS/33_TEN-INC_LEG_FACHADA-CAM3_R05.jpg', thumb:'assets/thumbs/IMAGENS/33_TEN-INC_LEG_FACHADA-CAM3_R05.jpg' },
-
-    // ═══ ÁREAS COMUNS ═══
-    { id:14, type:'image', category:'areas-comuns', title:'Hall Térreo', src:'assets/IMAGENS/14_TEN-INC_LEG_HALL-TERREO_R06.jpg', thumb:'assets/thumbs/IMAGENS/14_TEN-INC_LEG_HALL-TERREO_R06.jpg' },
-    { id:15, type:'image', category:'areas-comuns', title:'Brinquedoteca', src:'assets/IMAGENS/15_TEN-INC_LEG_BRINQUEDOTECA_R02.jpg', thumb:'assets/thumbs/IMAGENS/15_TEN-INC_LEG_BRINQUEDOTECA_R02.jpg' },
-    { id:16, type:'image', category:'areas-comuns', title:'Salão de Festas', src:'assets/IMAGENS/16_TEN-INC_LEG_FESTAS_R03.jpg', thumb:'assets/thumbs/IMAGENS/16_TEN-INC_LEG_FESTAS_R03.jpg' },
-    { id:17, type:'image', category:'areas-comuns', title:'Sauna', src:'assets/IMAGENS/17_TEN-INC_LEG_SAUNA_R04.jpg', thumb:'assets/thumbs/IMAGENS/17_TEN-INC_LEG_SAUNA_R04.jpg' },
-    { id:18, type:'image', category:'areas-comuns', title:'Academia', src:'assets/IMAGENS/18_TEN-INC_LEG_ACADEMIA_R04.jpg', thumb:'assets/thumbs/IMAGENS/18_TEN-INC_LEG_ACADEMIA_R04.jpg' },
-    { id:19, type:'image', category:'areas-comuns', title:'Coworking', src:'assets/IMAGENS/19_TEN-INC_LEG_COWORKING_R04.jpg', thumb:'assets/thumbs/IMAGENS/19_TEN-INC_LEG_COWORKING_R04.jpg' },
-    { id:20, type:'image', category:'areas-comuns', title:'Gourmet', src:'assets/IMAGENS/20_TEN-INC_LEG_GOURMET_R04.jpg', thumb:'assets/thumbs/IMAGENS/20_TEN-INC_LEG_GOURMET_R04.jpg' },
-    { id:21, type:'image', category:'areas-comuns', title:'Bicicletário', src:'assets/IMAGENS/21_TEN-INC_LEG_BICICLETARIO_R03.jpg', thumb:'assets/thumbs/IMAGENS/21_TEN-INC_LEG_BICICLETARIO_R03.jpg' },
-    { id:22, type:'image', category:'areas-comuns', title:'Playground', src:'assets/IMAGENS/22_TEN-INC_LEG_PLAY_R03.jpg', thumb:'assets/thumbs/IMAGENS/22_TEN-INC_LEG_PLAY_R03.jpg' },
-    { id:23, type:'image', category:'areas-comuns', title:'Pet Parque', src:'assets/IMAGENS/23_TEN-INC_LEG_PET-PARQUE_R04.jpg', thumb:'assets/thumbs/IMAGENS/23_TEN-INC_LEG_PET-PARQUE_R04.jpg' },
-    { id:24, type:'image', category:'areas-comuns', title:'Mini Campo', src:'assets/IMAGENS/24_TEN-INC_LEG_MINI-CAMPO_R03.jpg', thumb:'assets/thumbs/IMAGENS/24_TEN-INC_LEG_MINI-CAMPO_R03.jpg' },
-    { id:25, type:'image', category:'areas-comuns', title:'Piscina — Cam 1', src:'assets/IMAGENS/25_TEN-INC_LEG_PISCINA-CAM1_R04.jpg', thumb:'assets/thumbs/IMAGENS/25_TEN-INC_LEG_PISCINA-CAM1_R04.jpg' },
-    { id:26, type:'image', category:'areas-comuns', title:'Piscina — Cam 2', src:'assets/IMAGENS/26_TEN-INC_LEG_PISCINA-CAM2_R04.jpg', thumb:'assets/thumbs/IMAGENS/26_TEN-INC_LEG_PISCINA-CAM2_R04.jpg' },
-    { id:27, type:'image', category:'areas-comuns', title:'Hidro', src:'assets/IMAGENS/27_TEN-INC_LEG_HIDRO_R03.jpg', thumb:'assets/thumbs/IMAGENS/27_TEN-INC_LEG_HIDRO_R03.jpg' },
-    { id:29, type:'image', category:'areas-comuns', title:'Lazer Geral', src:'assets/IMAGENS/29_TEN-INC_LEG_LAZER-GERAL_R03.jpg', thumb:'assets/thumbs/IMAGENS/29_TEN-INC_LEG_LAZER-GERAL_R03.jpg' },
-    { id:43, type:'image', category:'areas-comuns', title:'Rooftop Gourmet', src:'assets/IMAGENS/43_TEN-INC_LEG_ROOFTOP-GOURMET_R01.jpg', thumb:'assets/thumbs/IMAGENS/43_TEN-INC_LEG_ROOFTOP-GOURMET_R01.jpg' },
-
-    // ═══ APARTAMENTO 3 QUARTOS ═══
-    { id:1, type:'image', category:'apto-3', title:'Salas — Cam 1', src:'assets/IMAGENS/01_TEN-INC_LEG_APT-3QTS-SALAS-CAM1_R05.jpg', thumb:'assets/thumbs/IMAGENS/01_TEN-INC_LEG_APT-3QTS-SALAS-CAM1_R05.jpg' },
-    { id:2, type:'image', category:'apto-3', title:'Salas — Cam 2', src:'assets/IMAGENS/02_TEN-INC_LEG_APT-3QTS-SALAS-CAM2_R05.jpg', thumb:'assets/thumbs/IMAGENS/02_TEN-INC_LEG_APT-3QTS-SALAS-CAM2_R05.jpg' },
-    { id:3, type:'image', category:'apto-3', title:'Varanda', src:'assets/IMAGENS/03_TEN-INC_LEG_APT-3QTS-VARANDA_R05.jpg', thumb:'assets/thumbs/IMAGENS/03_TEN-INC_LEG_APT-3QTS-VARANDA_R05.jpg' },
-    { id:4, type:'image', category:'apto-3', title:'Suíte Master', src:'assets/IMAGENS/04_TEN-INC_LEG_APT-3QTS-SUITE-MASTER_R01.jpg', thumb:'assets/thumbs/IMAGENS/04_TEN-INC_LEG_APT-3QTS-SUITE-MASTER_R01.jpg' },
-    { id:5, type:'image', category:'apto-3', title:'Suíte 01', src:'assets/IMAGENS/05_TEN-INC_LEG_APT-3QTS-SUITE-01_R03.jpg', thumb:'assets/thumbs/IMAGENS/05_TEN-INC_LEG_APT-3QTS-SUITE-01_R03.jpg' },
-    { id:6, type:'image', category:'apto-3', title:'Suíte 02', src:'assets/IMAGENS/06_TEN-INC_LEG_APT-3QTS-SUITE-02_R02.jpg', thumb:'assets/thumbs/IMAGENS/06_TEN-INC_LEG_APT-3QTS-SUITE-02_R02.jpg' },
-
-    // ═══ APARTAMENTO 4 QUARTOS ═══
-    { id:7, type:'image', category:'apto-4', title:'Varanda', src:'assets/IMAGENS/07_TEN-INC_LEG_APT-4QTS-VARANDA_R03.jpg', thumb:'assets/thumbs/IMAGENS/07_TEN-INC_LEG_APT-4QTS-VARANDA_R03.jpg' },
-    { id:8, type:'image', category:'apto-4', title:'Salas — Cam 2', src:'assets/IMAGENS/08_TEN-INC_LEG_APT-4QTS-SALAS-CAM2_R05.jpg', thumb:'assets/thumbs/IMAGENS/08_TEN-INC_LEG_APT-4QTS-SALAS-CAM2_R05.jpg' },
-    { id:9, type:'image', category:'apto-4', title:'Varanda', src:'assets/IMAGENS/09_TEN-INC_LEG_APT-4QTS-VARANDA_R05.jpg', thumb:'assets/thumbs/IMAGENS/09_TEN-INC_LEG_APT-4QTS-VARANDA_R05.jpg' },
-    { id:10, type:'image', category:'apto-4', title:'Suíte Master', src:'assets/IMAGENS/10_TEN-INC_LEG_APT-4QTS-SUITE-MASTER_R03.jpg', thumb:'assets/thumbs/IMAGENS/10_TEN-INC_LEG_APT-4QTS-SUITE-MASTER_R03.jpg' },
-    { id:11, type:'image', category:'apto-4', title:'Suíte 01', src:'assets/IMAGENS/11_TEN-INC_LEG_APT-4QTS-SUITE-01_R04.jpg', thumb:'assets/thumbs/IMAGENS/11_TEN-INC_LEG_APT-4QTS-SUITE-01_R04.jpg' },
-    { id:12, type:'image', category:'apto-4', title:'Suíte 02', src:'assets/IMAGENS/12_TEN-INC_LEG_APT-4QTS-SUITE-02_R05.jpg', thumb:'assets/thumbs/IMAGENS/12_TEN-INC_LEG_APT-4QTS-SUITE-02_R05.jpg' },
-    { id:13, type:'image', category:'apto-4', title:'Suíte 03', src:'assets/IMAGENS/13_TEN-INC_LEG_APT-4QTS-SUITE-03_R03.jpg', thumb:'assets/thumbs/IMAGENS/13_TEN-INC_LEG_APT-4QTS-SUITE-03_R03.jpg' },
-
-    // ═══ PLANTAS ═══
-    { id:35, type:'image', category:'plantas', isPlant:true, title:'Implantação Geral / Jardim Contemplativo', src:'assets/PLANTAS HUMANIZADAS/35_TEN-INC_LEG_PB_IMPLANTACAO-GERAL_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/35_TEN-INC_LEG_PB_IMPLANTACAO-GERAL_R04.jpg' },
-    { id:36, type:'image', category:'plantas', isPlant:true, title:'Térreo', src:'assets/PLANTAS HUMANIZADAS/36_TEN-INC_LEG_PB_TERREO_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/36_TEN-INC_LEG_PB_TERREO_R04.jpg' },
-    { id:37, type:'image', category:'plantas', isPlant:true, title:'Vazado', src:'assets/PLANTAS HUMANIZADAS/37_TEN-INC_LEG_PB_VAZADO_R00.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/37_TEN-INC_LEG_PB_VAZADO_R00.jpg' },
-    { id:39, type:'image', category:'plantas', isPlant:true, title:'Tipo 01 a 25', src:'assets/PLANTAS HUMANIZADAS/39_TEN-INC_LEG_PB_TIPO-06-A-24_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/39_TEN-INC_LEG_PB_TIPO-06-A-24_R04.jpg' },
-    { id:40, type:'image', category:'plantas', isPlant:true, title:'Cobertura', src:'assets/PLANTAS HUMANIZADAS/40_TEN-INC_LEG_PB_COBERTURA_R03.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/40_TEN-INC_LEG_PB_COBERTURA_R03.jpg' },
-    { id:41, type:'image', category:'plantas', isPlant:true, title:'Unidade 3 Quartos', src:'assets/PLANTAS HUMANIZADAS/41_TEN-INC_LEG_PB_UNIDADE-3QTS_R03.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/41_TEN-INC_LEG_PB_UNIDADE-3QTS_R03.jpg' },
-    { id:42, type:'image', category:'plantas', isPlant:true, title:'Unidade 4 Quartos', src:'assets/PLANTAS HUMANIZADAS/42_TEN-INC_LEG_PB_UNIDADE-4QTS_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/42_TEN-INC_LEG_PB_UNIDADE-4QTS_R02.jpg' },
-
-    // ═══ LOCALIZAÇÃO ═══
-    { id:34, type:'image', category:'mapa', title:'Mapa de Localização', src:'assets/IMAGENS/34_TEN-INC_LEG_MAPA_R03.jpg', thumb:'assets/thumbs/IMAGENS/34_TEN-INC_LEG_MAPA_R03.jpg' },
+    { id:1, type:'image', category:'fachada', title:'Fachada', src:'assets/IMAGENS/LTS_COMERCIAL_FACHADA_R06.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_FACHADA_R06.jpg' },
+    { id:2, type:'image', category:'fachada', title:'Fachada — Vista', src:'assets/IMAGENS/LTS_COMERCIAL_FACHADA_VISTA_R02.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_FACHADA_VISTA_R02.jpg' },
+    { id:3, type:'image', category:'fachada', title:'Fachada — Vertical', src:'assets/IMAGENS/LTS_COMERCIAL_FACHADA_VERTICAL_R00.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_FACHADA_VERTICAL_R00.jpg' },
+    // ═══ LAZER ═══
+    { id:4, type:'image', category:'lazer', title:'Piscina', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_PISCINA_R02.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_PISCINA_R02.jpg' },
+    { id:5, type:'image', category:'lazer', title:'Academia', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_ACADEMIA_R03.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_ACADEMIA_R03.jpg' },
+    { id:6, type:'image', category:'lazer', title:'Sauna', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_SAUNA_R02.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_SAUNA_R02.jpg' },
+    { id:7, type:'image', category:'lazer', title:'Salão de Festas', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_SALAO-FESTAS_R03.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_SALAO-FESTAS_R03.jpg' },
+    { id:8, type:'image', category:'lazer', title:'Lounge Gourmet', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_LOUNGE-GOURMET_R02.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_LOUNGE-GOURMET_R02.jpg' },
+    { id:9, type:'image', category:'lazer', title:'Playground', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_PLAYGROUND_R02.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_PLAYGROUND_R02.jpg' },
+    { id:10, type:'image', category:'lazer', title:'Espaço Teens', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_ESPAÇO-TEENS_R03.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_ESPAÇO-TEENS_R03.jpg' },
+    { id:11, type:'image', category:'lazer', title:'Pet Place', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_PET-PLACE_R01.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_PET-PLACE_R01.jpg' },
+    { id:12, type:'image', category:'lazer', title:'Redário', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_REDARIO_R03.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_REDARIO_R03.jpg' },
+    { id:13, type:'image', category:'lazer', title:'Bicicletário', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_BICICLETARIO_R02.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_BICICLETARIO_R02.jpg' },
+    { id:14, type:'image', category:'lazer', title:'Mini Market', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_MINI-MARKET_R03.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_MINI-MARKET_R03.jpg' },
+    { id:15, type:'image', category:'lazer', title:'Oficina / Guardaria', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_OFICINA-GUARDERIA_R02.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_OFICINA-GUARDERIA_R02.jpg' },
+    // ═══ PLANTAS (apenas PLANTAS HUMANIZADAS) ═══
+    { id:16, type:'image', category:'plantas', isPlant:true, title:'Masterplan', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN_R01.jpg' },
+    { id:17, type:'image', category:'plantas', isPlant:true, title:'Masterplan — Sem Nome', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN-SEM-NOME_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN-SEM-NOME_R01.jpg' },
+    { id:18, type:'image', category:'plantas', isPlant:true, title:'Tipo 01 e 04', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-01E04_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-01E04_R04.jpg' },
+    { id:19, type:'image', category:'plantas', isPlant:true, title:'Tipo 02 e 03', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-02E03_R05.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-02E03_R05.jpg' },
+    { id:20, type:'image', category:'plantas', isPlant:true, title:'Tipo 05 e 06', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-05E06_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-05E06_R04.jpg' },
+    { id:21, type:'image', category:'plantas', isPlant:true, title:'Cobertura 01', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-01_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-01_R04.jpg' },
+    { id:22, type:'image', category:'plantas', isPlant:true, title:'Cobertura 02', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_PBH_COB-02_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_PBH_COB-02_R04.jpg' },
+    { id:23, type:'image', category:'plantas', isPlant:true, title:'Cobertura 03', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-03_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-03_R04.jpg' },
+    { id:24, type:'image', category:'plantas', isPlant:true, title:'Cobertura — Cozinha / Sala', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_COZ-SALA_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_COZ-SALA_R02.jpg' },
+    { id:25, type:'image', category:'plantas', isPlant:true, title:'Cobertura — Suíte', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_SUITE_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_SUITE_R02.jpg' },
+    { id:26, type:'image', category:'plantas', isPlant:true, title:'Cobertura — Quarto 1', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-1_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-1_R01.jpg' },
+    { id:27, type:'image', category:'plantas', isPlant:true, title:'Cobertura — Quarto 2', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-2_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-2_R04.jpg' },
+    { id:28, type:'image', category:'plantas', isPlant:true, title:'Cobertura — Terraço', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_TERRAÇO_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_TERRAÇO_R01.jpg' },
+    { id:29, type:'image', category:'plantas', isPlant:true, title:'Coluna 03 — Sala / Cozinha', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_SALA-COZ_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_SALA-COZ_R01.jpg' },
+    { id:30, type:'image', category:'plantas', isPlant:true, title:'Coluna 03 — Escritório', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_ESCRITORIO_R00.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_ESCRITORIO_R00.jpg' },
+    { id:31, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Sala', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SALA_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SALA_R02.jpg' },
+    { id:32, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Cozinha', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_COZ_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_COZ_R02.jpg' },
+    { id:33, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Varanda', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_VARANDA_R03.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_VARANDA_R03.jpg' },
+    { id:34, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Suíte', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SUÍTE_R03.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SUÍTE_R03.jpg' },
+    { id:35, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Banho', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_BANHO_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_BANHO_R02.jpg' },
+    { id:36, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Quarto 1', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-1_R00.jpeg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-1_R00.jpg' },
+    { id:37, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Quarto 2', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-2_R00.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-2_R00.jpg' },
+    { id:38, type:'image', category:'plantas', isPlant:true, title:'Coluna 05 — Sala / Cozinha', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL05_SALA-COZ_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL05_SALA-COZ_R02.jpg' },
   ],
 };
 
