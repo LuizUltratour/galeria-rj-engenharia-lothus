@@ -11,17 +11,17 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Lothus — tema marrom imersivo.
+      /* Lothus — tema verde-petróleo imersivo.
          --bg = fundo marrom (primária) · --dark = foreground claro (secundária) · --accent = secundária usada em destaque/estado ativo */
-      --bg: #332419;             /* marrom principal — cor primária */
-      --surface: #3F2F22;        /* superfície de card (marrom +luz) */
-      --surface-2: #4C3A2B;      /* superfície elevada / hover */
+      --bg: #08383B;             /* verde-petróleo principal — cor primária */
+      --surface: #0E4548;        /* superfície de card (marrom +luz) */
+      --surface-2: #165457;      /* superfície elevada / hover */
       --dark: #F2EBDD;           /* foreground / texto principal — cor secundária */
       --text-soft: rgba(242,235,221,0.62);
       --border: rgba(242,235,221,0.12);
       --border-strong: rgba(242,235,221,0.28);
       --accent: #F2EBDD;         /* claro — destaque / estado ativo */
-      --accent-ink: #332419;     /* texto escuro sobre fundo de destaque claro */
+      --accent-ink: #08383B;     /* texto escuro sobre fundo de destaque claro */
       --accent-soft: rgba(242,235,221,0.14);
       --white: #F2EBDD;
       --font-serif: 'Cormorant Garamond', Georgia, serif;
@@ -33,7 +33,7 @@
     html, body {
       height: 100%;
       overflow: hidden;
-      background: var(--bg);
+      background: var(--bg) url(assets/bg.png) center / cover no-repeat fixed;
       color: var(--dark);
       font-family: var(--font-sans);
     }
@@ -43,19 +43,20 @@
       display: flex;
       flex-direction: column;
       height: 100vh;
-      background: var(--bg);
+      background: transparent;
     }
 
     /* ── HEADER ── */
     #g-header {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: space-between;
       padding: 12px 24px;
       border-bottom: 1px solid var(--border);
       flex-shrink: 0;
     }
 
+    #g-logo { height: 40px; width: auto; display: block; }
     #btn-close {
       width: 38px;
       height: 38px;
@@ -105,7 +106,7 @@
     }
     @media (hover: hover) { .f-btn:hover { border-color: var(--accent); background: var(--accent-soft); } }
     .f-btn:active { border-color: var(--accent); background: var(--accent-soft); }
-    .f-btn.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); box-shadow: 0 4px 14px rgba(51,36,25,0.35); }
+    .f-btn.active { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); box-shadow: 0 4px 14px rgba(8,56,59,0.35); }
     .f-btn:active { transform: scale(0.97); }
 
     /* Sub-filter */
@@ -228,7 +229,7 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       padding: 32px 14px 13px;
-      background: linear-gradient(to top, rgba(33,23,16,0.94) 0%, rgba(33,23,16,0.55) 58%, transparent 100%);
+      background: linear-gradient(to top, rgba(4,32,35,0.94) 0%, rgba(4,32,35,0.55) 58%, transparent 100%);
       color: var(--dark);
       opacity: 0;
       transition: opacity 0.35s ease;
@@ -265,7 +266,7 @@
       transform: scale(0.75);
       transition: opacity 0.25s var(--ease), transform 0.3s var(--spring);
       color: var(--accent-ink);
-      box-shadow: 0 4px 14px rgba(51,36,25,0.45);
+      box-shadow: 0 4px 14px rgba(8,56,59,0.45);
       z-index: 2;
     }
     .g-card.loaded:hover .card-zoom { opacity: 1; transform: scale(1); }
@@ -447,7 +448,7 @@
       position: absolute;
       bottom: 14px; left: 14px;
       padding: 4px 12px;
-      background: rgba(51,36,25,0.82);
+      background: rgba(8,56,59,0.82);
       color: var(--dark);
       font-size: 9.5px;
       font-weight: 500;
@@ -486,7 +487,7 @@
     .cob-hint {
       font-size: 10px;
       letter-spacing: 0.05em;
-      color: rgba(51,36,25,0.5);
+      color: rgba(8,56,59,0.5);
       text-transform: uppercase;
     }
 
@@ -520,7 +521,7 @@
       z-index: 9000;
       display: flex;
       flex-direction: column;
-      background: rgba(51,36,25,0.98);
+      background: rgba(8,56,59,0.98);
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -828,8 +829,8 @@
     .f-btn, .sf-btn { color: #B1904E; border-color: rgba(177,144,78,0.45); }
     .sf-btn { opacity: 0.75; }
     @media (hover: hover) { .f-btn:hover, .sf-btn:hover { border-color: #B1904E; background: rgba(177,144,78,0.14); } }
-    .f-btn:active, .sf-btn:active { background: #B1904E; color: #332419; border-color: #B1904E; }
-    .f-btn.active, .sf-btn.active { background: #B1904E; color: #332419; border-color: #B1904E; box-shadow: 0 4px 14px rgba(0,0,0,0.25); }
+    .f-btn:active, .sf-btn:active { background: #B1904E; color: #08383B; border-color: #B1904E; }
+    .f-btn.active, .sf-btn.active { background: #B1904E; color: #08383B; border-color: #B1904E; box-shadow: 0 4px 14px rgba(0,0,0,0.25); }
 
     /* ── Fundo das prévias ── */
     .g-card { background: #B1904E; }
@@ -854,6 +855,7 @@
 
   <!-- Header -->
   <header id="g-header">
+    <img id="g-logo" src="assets/logo.png" alt="Lothus">
     <button id="btn-close" title="Fechar galeria" aria-label="Fechar"></button>
   </header>
 
@@ -926,7 +928,10 @@ const GALLERY_CONFIG = {
   categories: [
     { id: 'fachada', label: 'Fachada' },
     { id: 'lazer', label: 'Lazer' },
-    { id: 'plantas', label: 'Plantas' },
+    { id: 'plantas', label: 'Plantas', subs: [
+      { id: 'plantas', label: 'Plantas' },
+      { id: 'ambientes', label: 'Ambientes' },
+    ] },
   ],
 
   items: [
@@ -948,29 +953,29 @@ const GALLERY_CONFIG = {
     { id:14, type:'image', category:'lazer', title:'Mini Market', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_MINI-MARKET_R03.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_MINI-MARKET_R03.jpg' },
     { id:15, type:'image', category:'lazer', title:'Oficina / Guardaria', src:'assets/IMAGENS/LTS_COMERCIAL_LAZER_OFICINA-GUARDERIA_R02.jpg', thumb:'assets/thumbs/IMAGENS/LTS_COMERCIAL_LAZER_OFICINA-GUARDERIA_R02.jpg' },
     // ═══ PLANTAS (apenas PLANTAS HUMANIZADAS) ═══
-    { id:16, type:'image', category:'plantas', isPlant:true, title:'Masterplan', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN_R01.jpg' },
-    { id:17, type:'image', category:'plantas', isPlant:true, title:'Masterplan — Sem Nome', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN-SEM-NOME_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN-SEM-NOME_R01.jpg' },
-    { id:18, type:'image', category:'plantas', isPlant:true, title:'Tipo 01 e 04', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-01E04_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-01E04_R04.jpg' },
-    { id:19, type:'image', category:'plantas', isPlant:true, title:'Tipo 02 e 03', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-02E03_R05.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-02E03_R05.jpg' },
-    { id:20, type:'image', category:'plantas', isPlant:true, title:'Tipo 05 e 06', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-05E06_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-05E06_R04.jpg' },
-    { id:21, type:'image', category:'plantas', isPlant:true, title:'Cobertura 01', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-01_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-01_R04.jpg' },
-    { id:22, type:'image', category:'plantas', isPlant:true, title:'Cobertura 02', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_PBH_COB-02_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_PBH_COB-02_R04.jpg' },
-    { id:23, type:'image', category:'plantas', isPlant:true, title:'Cobertura 03', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-03_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-03_R04.jpg' },
-    { id:24, type:'image', category:'plantas', isPlant:true, title:'Cobertura — Cozinha / Sala', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_COZ-SALA_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_COZ-SALA_R02.jpg' },
-    { id:25, type:'image', category:'plantas', isPlant:true, title:'Cobertura — Suíte', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_SUITE_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_SUITE_R02.jpg' },
-    { id:26, type:'image', category:'plantas', isPlant:true, title:'Cobertura — Quarto 1', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-1_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-1_R01.jpg' },
-    { id:27, type:'image', category:'plantas', isPlant:true, title:'Cobertura — Quarto 2', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-2_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-2_R04.jpg' },
-    { id:28, type:'image', category:'plantas', isPlant:true, title:'Cobertura — Terraço', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_TERRAÇO_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_TERRAÇO_R01.jpg' },
-    { id:29, type:'image', category:'plantas', isPlant:true, title:'Coluna 03 — Sala / Cozinha', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_SALA-COZ_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_SALA-COZ_R01.jpg' },
-    { id:30, type:'image', category:'plantas', isPlant:true, title:'Coluna 03 — Escritório', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_ESCRITORIO_R00.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_ESCRITORIO_R00.jpg' },
-    { id:31, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Sala', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SALA_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SALA_R02.jpg' },
-    { id:32, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Cozinha', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_COZ_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_COZ_R02.jpg' },
-    { id:33, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Varanda', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_VARANDA_R03.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_VARANDA_R03.jpg' },
-    { id:34, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Suíte', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SUÍTE_R03.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SUÍTE_R03.jpg' },
-    { id:35, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Banho', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_BANHO_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_BANHO_R02.jpg' },
-    { id:36, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Quarto 1', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-1_R00.jpeg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-1_R00.jpg' },
-    { id:37, type:'image', category:'plantas', isPlant:true, title:'Coluna 04 — Quarto 2', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-2_R00.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-2_R00.jpg' },
-    { id:38, type:'image', category:'plantas', isPlant:true, title:'Coluna 05 — Sala / Cozinha', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL05_SALA-COZ_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL05_SALA-COZ_R02.jpg' },
+    { id:16, type:'image', category:'plantas', subCategory:'plantas', isPlant:true, title:'Masterplan', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN_R01.jpg' },
+    { id:17, type:'image', category:'plantas', subCategory:'plantas', isPlant:true, title:'Masterplan — Sem Nome', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN-SEM-NOME_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_MASTERPLAN-SEM-NOME_R01.jpg' },
+    { id:18, type:'image', category:'plantas', subCategory:'plantas', isPlant:true, title:'Tipo 01 e 04', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-01E04_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-01E04_R04.jpg' },
+    { id:19, type:'image', category:'plantas', subCategory:'plantas', isPlant:true, title:'Tipo 02 e 03', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-02E03_R05.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-02E03_R05.jpg' },
+    { id:20, type:'image', category:'plantas', subCategory:'plantas', isPlant:true, title:'Tipo 05 e 06', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-05E06_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_TIPO-05E06_R04.jpg' },
+    { id:21, type:'image', category:'plantas', subCategory:'plantas', isPlant:true, title:'Cobertura 01', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-01_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-01_R04.jpg' },
+    { id:22, type:'image', category:'plantas', subCategory:'plantas', isPlant:true, title:'Cobertura 02', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_PBH_COB-02_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_PBH_COB-02_R04.jpg' },
+    { id:23, type:'image', category:'plantas', subCategory:'plantas', isPlant:true, title:'Cobertura 03', src:'assets/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-03_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_AP_COMERCIAL_PBH_COB-03_R04.jpg' },
+    { id:24, type:'image', category:'plantas', subCategory:'ambientes', title:'Cobertura — Cozinha / Sala', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_COZ-SALA_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_COZ-SALA_R02.jpg' },
+    { id:25, type:'image', category:'plantas', subCategory:'ambientes', title:'Cobertura — Suíte', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_SUITE_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_SUITE_R02.jpg' },
+    { id:26, type:'image', category:'plantas', subCategory:'ambientes', title:'Cobertura — Quarto 1', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-1_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-1_R01.jpg' },
+    { id:27, type:'image', category:'plantas', subCategory:'ambientes', title:'Cobertura — Quarto 2', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-2_R04.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_QUARTO-2_R04.jpg' },
+    { id:28, type:'image', category:'plantas', subCategory:'ambientes', title:'Cobertura — Terraço', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_TERRAÇO_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_COB_TERRAÇO_R01.jpg' },
+    { id:29, type:'image', category:'plantas', subCategory:'ambientes', title:'Coluna 03 — Sala / Cozinha', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_SALA-COZ_R01.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_SALA-COZ_R01.jpg' },
+    { id:30, type:'image', category:'plantas', subCategory:'ambientes', title:'Coluna 03 — Escritório', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_ESCRITORIO_R00.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL03_ESCRITORIO_R00.jpg' },
+    { id:31, type:'image', category:'plantas', subCategory:'ambientes', title:'Coluna 04 — Sala', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SALA_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SALA_R02.jpg' },
+    { id:32, type:'image', category:'plantas', subCategory:'ambientes', title:'Coluna 04 — Cozinha', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_COZ_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_COZ_R02.jpg' },
+    { id:33, type:'image', category:'plantas', subCategory:'ambientes', title:'Coluna 04 — Varanda', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_VARANDA_R03.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_VARANDA_R03.jpg' },
+    { id:34, type:'image', category:'plantas', subCategory:'ambientes', title:'Coluna 04 — Suíte', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SUÍTE_R03.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_SUÍTE_R03.jpg' },
+    { id:35, type:'image', category:'plantas', subCategory:'ambientes', title:'Coluna 04 — Banho', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_BANHO_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_BANHO_R02.jpg' },
+    { id:36, type:'image', category:'plantas', subCategory:'ambientes', title:'Coluna 04 — Quarto 1', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-1_R00.jpeg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-1_R00.jpg' },
+    { id:37, type:'image', category:'plantas', subCategory:'ambientes', title:'Coluna 04 — Quarto 2', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-2_R00.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL04_QUARTO-2_R00.jpg' },
+    { id:38, type:'image', category:'plantas', subCategory:'ambientes', title:'Coluna 05 — Sala / Cozinha', src:'assets/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL05_SALA-COZ_R02.jpg', thumb:'assets/thumbs/PLANTAS HUMANIZADAS/LTS_COMERCIAL_TIPO_COL05_SALA-COZ_R02.jpg' },
   ],
 };
 
@@ -1017,7 +1022,7 @@ const MODE = (() => {
 
 // Categorias exibidas no filtro principal conforme modo
 const DISPLAY_CATS = (() => {
-  if (MODE === 'plantas') return [{ id: 'plantas', label: 'Plantas' }];
+  if (MODE === 'plantas') return GALLERY_CONFIG.categories.filter(c => c.id === 'plantas');
   if (MODE === 'imagens') return GALLERY_CONFIG.categories.filter(c => c.id !== 'plantas');
   return GALLERY_CONFIG.categories;
 })();
@@ -1050,8 +1055,6 @@ function renderMainFilters() {
 }
 
 function renderSubFilters() {
-  // No modo plantas o filtro principal já é a tipologia — sem sub-filtro
-  if (MODE === 'plantas') { elFilterSub.classList.remove('open'); return; }
   const cat = getCat(st.cat);
   if (cat && cat.subs && cat.subs.length) {
     elFilterSubIn.innerHTML = '';
@@ -1081,9 +1084,7 @@ function filteredItems() {
     if (MODE === 'imagens' && item.category === 'plantas') return false;
 
     // Filtro de categoria
-    if (MODE === 'plantas') {
-      // todas as plantas da pasta PLANTAS HUMANIZADAS, sem sub-filtro
-    } else {
+    {
       if (st.cat && item.category !== st.cat) return false;
       if (st.sub && item.subCategory !== st.sub) return false;
     }
@@ -1400,7 +1401,7 @@ function init() {
   // Filtro inicial depende do modo
   if (MODE === 'plantas') {
     st.cat = 'plantas';
-    st.sub = null;
+    st.sub = 'plantas';
   } else {
     st.cat = DISPLAY_CATS[0].id;               // 'areas-comuns'
     const c0 = getCat(st.cat);
